@@ -1,0 +1,12 @@
+# Dynamic inventory
+plugin: azure_rm
+# Use the default authentication method
+auth_source: auto
+
+include_vm_resource_groups:
+# Include the resource group containing the VM
+  - paul-redhat
+
+conditionnal_groups:
+# Conditionally group VMs based on computer name
+  generatedVm: "'paul-redhat-vm' in computer_name"

@@ -1,0 +1,20 @@
+- name: Run roles and SCAP audit
+  hosts: all
+  remote_user: ansible
+  become: true
+  roles:
+    - role : ./roles/install_scap
+    - role : ./roles/dnf_auto
+    - role : ./roles/gpg_check
+    - role : ./roles/pam_all
+    - role : ./roles/authselect
+    - role : ./roles/pwd_spec
+    - role : ./roles/pwd_reuse
+    - role : ./roles/hash_pwd_auth
+    - role : ./roles/hash_sys_auth
+    - role : ./roles/interval_failedpwd
+    - role : ./roles/lockout
+    - role : ./roles/lockout_time
+    - role : ./roles/root_failedpwd
+    # - role : ./roles/priv_escalation_auth
+    - role : ./roles/scan_scap
